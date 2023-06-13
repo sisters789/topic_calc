@@ -1,0 +1,5 @@
+*.docx
+*.mp4
+*.o
+main
+build/
