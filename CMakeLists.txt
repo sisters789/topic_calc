@@ -15,12 +15,13 @@ if(NOT googletest_POPULATED)
   add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BUILD_DIR})
 endif()
 
+# need to place this on top-level directory of project
+# add this before add_subdirectory(), add_test()
+enable_testing()
+
 add_subdirectory(src)
 add_subdirectory(test)
 
 add_executable(main main.cpp)
 target_link_libraries(main PRIVATE calculator scientific)
 # target_include_directories(main PRIVATE "${PROJECT_BINARY_DIR}")
-
-# need to place this on top-level directory of project
-enable_testing()
