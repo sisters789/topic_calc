@@ -1,0 +1,5 @@
+add_executable(calculator_test_runner calculator_test.cpp)
+target_link_libraries(calculator_test_runner PRIVATE calculator)
+
+add_executable(scientific_test_runner scientific_test.cpp)
+target_link_libraries(calculator_test_runner PRIVATE scientific)
