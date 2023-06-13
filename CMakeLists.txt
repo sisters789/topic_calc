@@ -21,3 +21,6 @@ add_subdirectory(test)
 add_executable(main main.cpp)
 target_link_libraries(main PRIVATE calculator scientific)
 # target_include_directories(main PRIVATE "${PROJECT_BINARY_DIR}")
+
+# need to place this on top-level directory of project
+enable_testing()

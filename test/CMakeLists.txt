@@ -1,5 +1,9 @@
+#testing
 add_executable(calculator_test_runner calculator_test.cpp)
-target_link_libraries(calculator_test_runner PRIVATE calculator)
+target_link_libraries(calculator_test_runner PRIVATE calculator gtest_main)
 
 add_executable(scientific_test_runner scientific_test.cpp)
-target_link_libraries(calculator_test_runner PRIVATE scientific)
+target_link_libraries(scientific_test_runner PRIVATE scientific gtest_main)
+
+gtest_discover_tests(calculator_test_runner)
+gtest_discover_tests(scientific_test_runner)
