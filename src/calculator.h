@@ -28,10 +28,14 @@ public:
     /// parse input and decide which member func to call
     virtual void parseOperation(const std::string&);
 
+    void setA(const std::string&);
+    void setB(const std::string&);
+
 /// protected so derived class can access.
 protected:
     double result;      /// data member to store result
     double mem;         /// data member to store mem
+    std::string a,b;
 };
 
 #endif // CALCULATOR_H

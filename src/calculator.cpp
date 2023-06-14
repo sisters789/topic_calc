@@ -3,70 +3,70 @@
 
 /// Constructor
 /// Initilize data members to 0 doubles
-Calculator::Calculator() : result(0.0), mem(0.0) {}
+Calculator::Calculator() : result(0.0), mem(0.0), a("1"), b("2") {}
 
 void Calculator::add()
 {
-    std::string a, b;
-    std::cout << "Enter the first number: ";
-    std::cin >> a;
-    std::cout << "Enter the second number: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the first number: ";
+    // std::cin >> a;
+    // std::cout << "Enter the second number: ";
+    // std::cin >> b;
     result = parseInput(a) + parseInput(b);
     std::cout << "The result is " << result;
 }
 void Calculator::subtract()
 {
-    std::string a, b;
-    std::cout << "Enter the first number: ";
-    std::cin >> a;
-    std::cout << "Enter the second number: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the first number: ";
+    // std::cin >> a;
+    // std::cout << "Enter the second number: ";
+    // std::cin >> b;
     result = parseInput(a) - parseInput(b);
     std::cout << "The result is " << result;
 }
 void Calculator::multiply()
 {
-    std::string a, b;
-    std::cout << "Enter the first number: ";
-    std::cin >> a;
-    std::cout << "Enter the second number: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the first number: ";
+    // std::cin >> a;
+    // std::cout << "Enter the second number: ";
+    // std::cin >> b;
     result = parseInput(a) * parseInput(b);
     std::cout << "The result is " << result;
 }
 void Calculator::divide()
 {
-    std::string a, b;
-    std::cout << "Enter the first number: ";
-    std::cin >> a;
-    std::cout << "Enter the second number: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the first number: ";
+    // std::cin >> a;
+    // std::cout << "Enter the second number: ";
+    // std::cin >> b;
     result = parseInput(a) / parseInput(b);
     std::cout << "The result is " << result;
 }
 void Calculator::square()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     double parsedA = parseInput(a);
     result = parsedA * parsedA;
     std::cout << "The result is " << result;
 }
 void Calculator::sqrt()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::sqrt(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Calculator::setMem()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     mem = parseInput(a);
     std::cout << "The mem is " << mem;
 }
@@ -129,4 +129,12 @@ void Calculator::parseOperation(const std::string& input)
     {
         printMem();
     }
+}
+void Calculator::setA(const std::string& val)
+{
+    this->a = val;
+}
+void Calculator::setB(const std::string& val)
+{
+    this->b = val;
 }

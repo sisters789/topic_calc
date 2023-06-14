@@ -1,10 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
-#include <sstream>
 
 #include "calculator.h"
-
-using namespace std;
 
 class CalculatorTest : public ::testing::Test
 {
@@ -41,8 +38,8 @@ TEST_F(CalculatorTest, PrintMemTest)
 {
     ::testing::internal::CaptureStdout();
     calc.printMem();
-    string output = ::testing::internal::GetCapturedStdout();
-    string expected = "The mem is 0";
+    std::string output = ::testing::internal::GetCapturedStdout();
+    std::string expected = "The mem is 0";
 
     EXPECT_EQ(output, expected);
 }
@@ -51,10 +48,25 @@ TEST_F(CalculatorTest, SetMemTest)
 {
     ::testing::internal::CaptureStdout();
     calc.printMem();
-    string output = ::testing::internal::GetCapturedStdout();
-    string expected = "The mem is 0";
+    std::string output = ::testing::internal::GetCapturedStdout();
+    std::string expected = "The mem is 0";
 
     EXPECT_EQ(output, expected);
+}
+
+TEST_F(CalculatorTest, DividedByZeroTest)
+{
+    calc.setA("1");
+    calc.setB("0");
+
+    ASSERT_ANY_THROW(calc.divide());
+}
+
+TEST_F(CalculatorTest, NegativeSqrtTest)
+{
+    calc.setA("-4");
+
+    ASSERT_ANY_THROW(calc.sqrt());
 }
 
 int main(int argc, char** argv)

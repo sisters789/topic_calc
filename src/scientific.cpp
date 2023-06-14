@@ -50,61 +50,61 @@ void Scientific::parseOperation(const std::string& input)
 }
 void Scientific::sin()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::sin(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::cos()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::cos(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::tan()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::tan(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::ln()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::log(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::log()
 {
-    std::string a, b;
-    std::cout << "Enter the base: ";
-    std::cin >> a;
-    std::cout << "Enter a number: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the base: ";
+    // std::cin >> a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> b;
     result = std::log(parseInput(b))/std::log(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::abs()
 {
-    std::string a;
-    std::cout << "Enter a number: ";
-    std::cin >> a;
+    // std::string a;
+    // std::cout << "Enter a number: ";
+    // std::cin >> a;
     result = std::abs(parseInput(a));
     std::cout << "The result is " << result;
 }
 void Scientific::pow()
 {
-    std::string a, b;
-    std::cout << "Enter the base: ";
-    std::cin >> a;
-    std::cout << "Enter the exponent: ";
-    std::cin >> b;
+    // std::string a, b;
+    // std::cout << "Enter the base: ";
+    // std::cin >> a;
+    // std::cout << "Enter the exponent: ";
+    // std::cin >> b;
     result = std::pow(parseInput(a), parseInput(b));
     std::cout << "The result is " << result;
 }
