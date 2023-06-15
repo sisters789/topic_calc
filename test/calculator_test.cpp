@@ -1,6 +1,6 @@
 #include <iostream>
 #include <gtest/gtest.h>
-
+#include <unistd.h>
 #include "calculator.h"
 
 class CalculatorTest : public ::testing::Test
@@ -68,6 +68,26 @@ TEST_F(CalculatorTest, NegativeSqrtTest)
 
     ASSERT_ANY_THROW(calc.sqrt());
 }
+
+TEST_F(CalculatorTest, writefile1)
+{
+    std::string test_suite_name = ::testing::UnitTest::GetInstance()->current_test_info()->test_suite_name();
+    std::string test_name = ::testing::UnitTest::GetInstance()->current_test_info()->name();
+    std::string filename = test_suite_name + "." + test_name + ".txt";
+    EXPECT_TRUE(calc.writeResultToFile(filename, 1));
+    ::testing::internal::CaptureStdout();
+    calc.printMem();
+    std::string output = ::testing::internal::GetCapturedStdout();
+}
+
+TEST_F(CalculatorTest, writefile2)
+{
+    std::string test_suite_name = ::testing::UnitTest::GetInstance()->current_test_info()->test_suite_name();
+    std::string test_name = ::testing::UnitTest::GetInstance()->current_test_info()->name();
+    std::string filename = test_suite_name + "." + test_name + ".txt";
+    EXPECT_TRUE(calc.writeResultToFile(filename, 2));
+}
+
 
 int main(int argc, char** argv)
 {

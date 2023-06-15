@@ -30,6 +30,7 @@ public:
 
     void setA(const std::string&);
     void setB(const std::string&);
+    bool writeResultToFile(const std::string&, const double&);
 
 /// protected so derived class can access.
 protected:

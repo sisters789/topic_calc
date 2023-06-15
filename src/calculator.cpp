@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <exception>
+#include <unistd.h>
 #include "calculator.h"
 
 /// Constructor
@@ -137,4 +140,22 @@ void Calculator::setA(const std::string& val)
 void Calculator::setB(const std::string& val)
 {
     this->b = val;
+}
+
+bool Calculator::writeResultToFile(const std::string& filename, const double& res)
+{
+    try
+    {
+        std::ofstream of(filename, std::ofstream::out | std::ofstream::app);
+
+        of << "The result is " << res << std::endl;
+        sleep(5);
+        of.close();
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+        return false;
+    }
+    return true;
 }

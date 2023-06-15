@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(Calculator)
+project(myCalculator)
 
 # include to use gtest_discover_tests() and gtest_add_tests()
 include(GoogleTest)
