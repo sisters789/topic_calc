@@ -1,6 +1,7 @@
 #include <iostream>
 #include <gtest/gtest.h>
 #include <unistd.h>
+#include <cstring>
 #include "calculator.h"
 
 class CalculatorTest : public ::testing::Test
@@ -74,10 +75,15 @@ TEST_F(CalculatorTest, writefile1)
     std::string test_suite_name = ::testing::UnitTest::GetInstance()->current_test_info()->test_suite_name();
     std::string test_name = ::testing::UnitTest::GetInstance()->current_test_info()->name();
     std::string filename = test_suite_name + "." + test_name + ".txt";
+    std::string cmd = "ls | grep " + filename;
+
     EXPECT_TRUE(calc.writeResultToFile(filename, 1));
+
     ::testing::internal::CaptureStdout();
-    calc.printMem();
-    std::string output = ::testing::internal::GetCapturedStdout();
+    system(cmd.c_str());
+    std::string cmd_output = ::testing::internal::GetCapturedStdout();
+
+    EXPECT_TRUE(cmd_output.find(filename) != std::string::npos);
 }
 
 TEST_F(CalculatorTest, writefile2)
@@ -87,7 +93,6 @@ TEST_F(CalculatorTest, writefile2)
     std::string filename = test_suite_name + "." + test_name + ".txt";
     EXPECT_TRUE(calc.writeResultToFile(filename, 2));
 }
-
 
 int main(int argc, char** argv)
 {

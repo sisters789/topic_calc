@@ -3,6 +3,7 @@ project(myCalculator)
 
 # include to use gtest_discover_tests() and gtest_add_tests()
 include(GoogleTest)
+include(CTest)
 
 #get googletest
 include(FetchContent)
